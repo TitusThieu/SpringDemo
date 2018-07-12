@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="account" class="com.higgsup.intern.spring.pojo.Account">
+        <property name="name" value="BIDV"/>
+    </bean>
+
+    <bean id="address" class="com.higgsup.intern.spring.pojo.Address">
+        <property name="address" value="Ha Noi"/>
+    </bean>
+
+   <!-- Setter Injection-->
+    <!--<bean id = "person" class="com.higgsup.intern.spring.pojo.Person" autowire="byName">
+        <property name="name" value="Titus"/>
+        <property name="age" value="24"/>
+        &lt;!&ndash;<property name="account" ref="account"/>
+        <property name="address" ref="address"/>&ndash;&gt;
+    </bean>-->
+
+  <!--  Constructor Injection-->
+    <bean id = "person" class="com.higgsup.intern.spring.pojo.Person">
+        <constructor-arg name="name" value="Tu"/>
+        <constructor-arg name="age" value="24"/>
+        <constructor-arg name="account" ref="account"/>
+        <constructor-arg name="address" ref="address"/>
+    </bean>
+
+</beans>
